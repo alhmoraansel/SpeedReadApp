@@ -1,0 +1,25 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="SpeedReaderApp"
+run/main_scene="res://new.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+
+[display]
+
+window/size/viewport_width=1366
+window/size/viewport_height=768
+window/size/window_width_override=640
+window/size/window_height_override=480
+window/subwindows/embed_subwindows=false
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"

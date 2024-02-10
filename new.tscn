@@ -1,0 +1,224 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckaddews3bkl3"]
+
+[ext_resource type="Theme" uid="uid://dykjorj4xdlsh" path="res://new_theme.tres" id="1_icol1"]
+[ext_resource type="Script" path="res://new.gd" id="1_lb4lv"]
+[ext_resource type="LabelSettings" uid="uid://bfcs48dy18c2f" path="res://label_settings.tres" id="3_v2whk"]
+[ext_resource type="FontFile" uid="uid://dhco02f4qstgy" path="res://Stopbuck.ttf" id="4_m30ds"]
+
+[sub_resource type="Theme" id="Theme_2p44k"]
+default_font = ExtResource("4_m30ds")
+default_font_size = 30
+Label/fonts/font = ExtResource("4_m30ds")
+
+[sub_resource type="Theme" id="Theme_84ct0"]
+default_font = ExtResource("4_m30ds")
+default_font_size = 20
+Label/fonts/font = ExtResource("4_m30ds")
+
+[sub_resource type="LabelSettings" id="LabelSettings_33ubk"]
+font = ExtResource("4_m30ds")
+font_size = 32
+
+[sub_resource type="Theme" id="Theme_dbcq5"]
+default_font = ExtResource("4_m30ds")
+default_font_size = 38
+Label/fonts/font = ExtResource("4_m30ds")
+
+[sub_resource type="LabelSettings" id="LabelSettings_u4tnx"]
+font = ExtResource("4_m30ds")
+font_size = 57
+
+[sub_resource type="Theme" id="Theme_w1fl7"]
+default_font = ExtResource("4_m30ds")
+default_font_size = 25
+Label/fonts/font = ExtResource("4_m30ds")
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_lb4lv")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_icol1")
+text = "empty"
+label_settings = ExtResource("3_v2whk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="texts" type="TextEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 28.0
+offset_top = 95.0
+offset_right = -979.0
+offset_bottom = 475.0
+grow_horizontal = 2
+theme = ExtResource("1_icol1")
+placeholder_text = "ENTER TEXT"
+wrap_mode = 1
+scroll_smooth = true
+caret_blink = true
+
+[node name="startbutton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 196.0
+offset_bottom = 83.0
+size_flags_vertical = 3
+theme = SubResource("Theme_2p44k")
+text = "select a file"
+flat = true
+
+[node name="filepathlabel" type="LineEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 270.0
+offset_top = 36.0
+offset_right = 1295.0
+offset_bottom = 69.0
+theme = SubResource("Theme_84ct0")
+theme_override_colors/font_color = Color(0.482353, 0.14902, 0.0666667, 1)
+text = "selected file"
+editable = false
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -217.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 65
+theme_override_constants/margin_right = 65
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
+columns = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "SPEED"
+label_settings = SubResource("LabelSettings_33ubk")
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 1.0
+max_value = 10.0
+step = 0.1
+value = 1.0
+
+[node name="center container" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="resumebutton" type="Button" parent="MarginContainer/VBoxContainer/center container"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_dbcq5")
+theme_override_colors/font_color = Color(0.4, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.4, 1, 1, 1)
+text = "play"
+flat = true
+
+[node name="pausebutton" type="Button" parent="MarginContainer/VBoxContainer/center container"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_dbcq5")
+theme_override_colors/font_color = Color(0, 0.901961, 0, 1)
+text = "pause"
+flat = true
+
+[node name="wpm" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SPEED"
+label_settings = SubResource("LabelSettings_u4tnx")
+horizontal_alignment = 1
+
+[node name="stopbutton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.495
+offset_top = -49.44
+offset_right = -23.495
+offset_bottom = -16.44
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 3
+theme = SubResource("Theme_w1fl7")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "stop"
+flat = true
+
+[node name="FileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Open a File or Directory"
+initial_position = 2
+size = Vector2i(459, 496)
+popup_window = true
+content_scale_mode = 2
+theme = ExtResource("1_icol1")
+theme_override_colors/folder_icon_color = Color(1, 1, 0, 1)
+theme_override_colors/file_icon_color = Color(0, 1, 1, 1)
+theme_override_colors/file_disabled_color = Color(1, 0, 0, 1)
+ok_button_text = "Open"
+mode_overrides_title = false
+file_mode = 0
+access = 2
+use_native_dialog = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="button_down" from="startbutton" to="." method="_on_startbutton_button_down"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/center container/resumebutton" to="." method="_on_resumebutton_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/center container/pausebutton" to="." method="_on_pausebutton_button_down"]
+[connection signal="button_down" from="stopbutton" to="." method="_on_stopbutton_button_down"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctw2koi84k6hq"]
+
+[ext_resource type="Theme" uid="uid://dykjorj4xdlsh" path="res://new_theme.tres" id="1_1p5yc"]
+
+[node name="OpenDialogbox" type="Node2D"]
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File or Directory"
+initial_position = 2
+size = Vector2i(459, 496)
+visible = true
+popup_window = true
+content_scale_mode = 2
+theme = ExtResource("1_1p5yc")
+theme_override_colors/folder_icon_color = Color(1, 1, 0, 1)
+theme_override_colors/file_icon_color = Color(0, 1, 1, 1)
+theme_override_colors/file_disabled_color = Color(1, 0, 0, 1)
+ok_button_text = "Open"
+mode_overrides_title = false
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.txt", ".doc")
+use_native_dialog = true
