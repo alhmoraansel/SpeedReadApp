@@ -18,9 +18,10 @@ var z:=0
 var string_to_print
 
 func _process(_delta):
-	main_string=texts.text
-	word_count = main_string.get_slice_count(" ")
-	
+	if texts.visible:
+		main_string=texts.text
+		word_count = main_string.get_slice_count(" ")
+		
 	wpm.text = str(60/timer.wait_time)+" WPM"
 	
 	if string_to_print: label.text = string_to_print
