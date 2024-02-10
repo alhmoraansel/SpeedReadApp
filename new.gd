@@ -18,10 +18,15 @@ var z:=0
 var string_to_print
 
 func _process(_delta):
+	main_string=texts.text
+	word_count = main_string.get_slice_count(" ")
+	
 	wpm.text = str(60/timer.wait_time)+" WPM"
+	
 	if string_to_print: label.text = string_to_print
-	#completed the session
-	if z+1 == word_count: 	
+	
+	if z== word_count:
+		texts.visible = true
 		resumebutton.visible = true
 		pausebutton.visible = false
 		z=0
@@ -30,14 +35,9 @@ func _process(_delta):
 func _on_timer_timeout():
 	if main_string: next_word(main_string,z)
 
-func _on_line_edit_2_text_submitted(new_text : String):
-	main_string = new_text
-	timer.start()
-	word_count = main_string.get_slice_count(" ")
-
 func next_word (text:String,index:int):
-	z+=1
 	string_to_print = text.get_slice(" ",index)
+	z+=1
 
 func _on_h_slider_value_changed(value):
 	timer.wait_time = 1/value
@@ -61,7 +61,6 @@ func _on_pausebutton_button_down():
 func _on_resumebutton_button_down():
 	if main_string == null:
 		file_dialog.popup()
-		texts.visible = true
 	pausebutton.visible = true
 	resumebutton.visible = false
 	texts.visible = false
@@ -69,6 +68,7 @@ func _on_resumebutton_button_down():
 	timer.start()
 
 func _on_stopbutton_button_down():
+	texts.visible = true
 	resumebutton.visible = true
 	pausebutton.visible = false
 	z=0
@@ -80,3 +80,4 @@ func _on_startbutton_button_down():
 	timer.stop()
 	z=0
 	file_dialog.popup()
+

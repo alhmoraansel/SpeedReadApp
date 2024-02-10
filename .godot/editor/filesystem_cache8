@@ -1,8 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1707541878
+::res://::1707547913
 Congenial Regular.ttf::FontFile::881700560856369823::1707531250::1707531250::1::::<><>::
-label_settings.tres::LabelSettings::2742640090315884043::1707540441::0::1::::<><>::
-new.gd::GDScript::-1::1707540493::0::1::::<>Control<>::
-new.tscn::PackedScene::5474917557060944066::1707540493::0::1::::<><>::uid://dykjorj4xdlsh::::res://new_theme.tres<>res://new.gd<>uid://bfcs48dy18c2f::::res://label_settings.tres<>uid://dhco02f4qstgy::::res://Stopbuck.ttf
-new_theme.tres::Theme::8865010438130931327::1707531381::0::1::::<><>::uid://dhco02f4qstgy::::res://Stopbuck.ttf<>uid://mtdqkhdgpsvv::::res://Congenial Regular.ttf
+label_settings.tres::LabelSettings::2742640090315884043::1707541881::0::1::::<><>::
+new.gd::GDScript::-1::1707547710::0::1::::<>Control<>::
+new.tscn::PackedScene::5474917557060944066::1707547734::0::1::::<><>::uid://dykjorj4xdlsh::::res://new_theme.tres<>res://new.gd<>uid://bfcs48dy18c2f::::res://label_settings.tres<>uid://dhco02f4qstgy::::res://Stopbuck.ttf
+new_theme.tres::Theme::8865010438130931327::1707543039::0::1::::<><>::uid://dhco02f4qstgy::::res://Stopbuck.ttf
+open_dialogbox.tscn::PackedScene::6153503673065765178::1707543537::0::1::::<><>::uid://dykjorj4xdlsh::::res://new_theme.tres
 Stopbuck.ttf::FontFile::7655608821994216608::1707531285::1707531285::1::::<><>::

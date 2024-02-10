@@ -53,13 +53,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 200
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer2"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer2/CenterContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(850, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_icol1")
@@ -67,7 +68,7 @@ text = "empty"
 label_settings = ExtResource("3_v2whk")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
