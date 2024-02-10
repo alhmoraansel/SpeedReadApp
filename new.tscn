@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckaddews3bkl3"]
+[gd_scene load_steps=14 format=3 uid="uid://ckaddews3bkl3"]
 
 [ext_resource type="Theme" uid="uid://dykjorj4xdlsh" path="res://new_theme.tres" id="1_icol1"]
 [ext_resource type="Script" path="res://new.gd" id="1_lb4lv"]
@@ -24,14 +24,27 @@ default_font = ExtResource("4_m30ds")
 default_font_size = 38
 Label/fonts/font = ExtResource("4_m30ds")
 
-[sub_resource type="LabelSettings" id="LabelSettings_u4tnx"]
-font = ExtResource("4_m30ds")
-font_size = 57
-
 [sub_resource type="Theme" id="Theme_w1fl7"]
 default_font = ExtResource("4_m30ds")
 default_font_size = 25
 Label/fonts/font = ExtResource("4_m30ds")
+
+[sub_resource type="Theme" id="Theme_e6m6o"]
+default_font = ExtResource("4_m30ds")
+default_font_size = 41
+Label/fonts/font = ExtResource("4_m30ds")
+
+[sub_resource type="LabelSettings" id="LabelSettings_u4tnx"]
+font = ExtResource("4_m30ds")
+font_size = 57
+
+[sub_resource type="Theme" id="Theme_m2jgv"]
+default_font = ExtResource("4_m30ds")
+default_font_size = 16
+Label/fonts/font = ExtResource("4_m30ds")
+
+[sub_resource type="LabelSettings" id="LabelSettings_n71t2"]
+font_size = 20
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -105,7 +118,7 @@ unique_name_in_owner = true
 layout_mode = 1
 offset_left = 270.0
 offset_top = 36.0
-offset_right = 1295.0
+offset_right = 1301.0
 offset_bottom = 69.0
 theme = SubResource("Theme_84ct0")
 theme_override_colors/font_color = Color(0.482353, 0.14902, 0.0666667, 1)
@@ -173,13 +186,6 @@ theme_override_colors/font_color = Color(0, 0.901961, 0, 1)
 text = "pause"
 flat = true
 
-[node name="wpm" type="Label" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "SPEED"
-label_settings = SubResource("LabelSettings_u4tnx")
-horizontal_alignment = 1
-
 [node name="stopbutton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 3
@@ -199,6 +205,40 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "stop"
 flat = true
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.368627, 1, 0.188235, 1)
+self_modulate = Color(0.360784, 0.819608, 0, 1)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -80.0
+offset_right = 588.0
+offset_bottom = -36.0
+grow_vertical = 0
+theme = SubResource("Theme_e6m6o")
+
+[node name="wpm" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -481.0
+offset_top = -80.0
+offset_right = -315.0
+offset_bottom = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+text = "SPEED"
+label_settings = SubResource("LabelSettings_u4tnx")
+horizontal_alignment = 1
+
 [node name="FileDialog" type="FileDialog" parent="."]
 unique_name_in_owner = true
 title = "Open a File or Directory"
@@ -216,7 +256,25 @@ file_mode = 0
 access = 2
 use_native_dialog = true
 
+[node name="timeLeft" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -205.0
+offset_top = -126.0
+offset_right = -19.0
+offset_bottom = -72.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_m2jgv")
+label_settings = SubResource("LabelSettings_n71t2")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="text_changed" from="texts" to="." method="_on_texts_text_changed"]
 [connection signal="button_down" from="startbutton" to="." method="_on_startbutton_button_down"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/center container/resumebutton" to="." method="_on_resumebutton_button_down"]
