@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://dykjorj4xdlsh"]
 
-[ext_resource type="FontFile" uid="uid://dhco02f4qstgy" path="res://Stopbuck.ttf" id="1_kacwc"]
+[ext_resource type="FontFile" uid="uid://dl5mqkbcmc2a0" path="res://my_custom_font.ttf" id="1_3vsnn"]
 
 [resource]
-default_font = ExtResource("1_kacwc")
+default_font = ExtResource("1_3vsnn")
 default_font_size = 16
-Label/fonts/font = ExtResource("1_kacwc")
+Label/fonts/font = ExtResource("1_3vsnn")

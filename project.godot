@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="SpeedReaderApp"
+config/description="Speed Reader"
+config/version="1.0.0.0.0"
 run/main_scene="res://new.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/image="res://book_01.png"
+config/icon="res://book_01.svg"
+config/windows_native_icon="res://icon.ico"
 
 [display]
 
@@ -27,4 +32,5 @@ window/handheld/orientation=6
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
